@@ -30,6 +30,14 @@
             <main>
                 {{ $slot }}
             </main>
+
+            {{-- JS Scripts --}}
+            @isset($scripts)
+                <section x-data x-init="() => { $dispatch('vite:load') }">
+                    {{ $scripts }}
+                </section>              
+            @endisset
+            </section>
         </div>
     </body>
 </html>
