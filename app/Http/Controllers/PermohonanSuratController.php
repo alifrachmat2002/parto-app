@@ -9,6 +9,15 @@ use Illuminate\Http\Request;
 
 class PermohonanSuratController extends Controller
 {
+    public function index()
+    {
+        $surats = Surat::where('pemohon_id', auth()->id())->get();
+
+        $acceptedSurats = $surats->where('status', 'Selesai');
+        $pendingSurats = $surats->where('status', '!=', 'Selesai');
+
+        return view('permohonan-surat.index', compact('acceptedSurats', 'pendingSurats'));
+    }
 
     public function create()
     {
