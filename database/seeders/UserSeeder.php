@@ -26,9 +26,9 @@ class UserSeeder extends Seeder
         ]);
         User::factory()->create([
             'name' => 'Soeharto Kanthi',
-            'email' => 'zalfitra@gmail.com',
+            'email' => 'soeharto@gmail.com',
             'password' => bcrypt('password'),
-            'role_id' => Role::where('name', 'Ketua RT')->first()->id,
+            'role_id' => Role::where('name', 'Ketua RW')->first()->id,
         ]);
     }
 }
