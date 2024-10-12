@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('surats', function (Blueprint $table) {
             $table->string('id')->primary();
+            $table->string('nomor_surat');
             $table->foreignId('pemohon_id')->constrained('users');
             $table->string('perihal');
             $table->string('nama_pemohon');

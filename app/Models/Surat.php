@@ -68,7 +68,7 @@ class Surat extends Model
 
             if ($latestSurat) {
                 $latestSuratId = $latestSurat->id;
-                $latestSuratIdExploded = explode('/', $latestSuratId);
+                $latestSuratIdExploded = explode('-', $latestSuratId);
                 $latestSuratNumber = explode('.', $latestSuratIdExploded[0]);
                 $latestSuratNumber = intval($latestSuratNumber[1]);
                 $latestSuratMonth = Surat::romanToMonth($latestSuratIdExploded[2]);
@@ -82,7 +82,9 @@ class Surat extends Model
                 $latestSuratNumber = 1;
             }
 
-            $model->id = '15.' . str_pad($latestSuratNumber, 3, '0', STR_PAD_LEFT) . "/" . "RT/" . Surat::monthToRoman(date('n')) . '/' . date('Y');
+            $model->id = '15.' . str_pad($latestSuratNumber, 3, '0', STR_PAD_LEFT) . "-" . "RT-" . Surat::monthToRoman(date('n')) . '-' . date('Y');
+
+            $model->nomor_surat = implode('/',explode('-',$model->id));
         });
     }
 }
