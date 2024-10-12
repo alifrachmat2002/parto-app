@@ -33,7 +33,7 @@
         <div id="suratTab">
             <div class="py-4 lg:py-6 grid md:grid-cols-2 lg:grid-cols-3  gap-4" id="acceptedSuratTab" role="tabpanel">
                 @forelse ($acceptedSurats as $acceptedSurat)
-                    <a href="#"
+                    <a href="{{ route('permohonan-surat.show', $acceptedSurat->id) }}"
                         class="block max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 
                         <h5 class="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -58,7 +58,7 @@
             </div>
             <div class="py-4 lg:py-6 grid md:grid-cols-2 lg:grid-cols-3  gap-4" id="pendingSuratTab" role="tabpanel">
                 @forelse ($pendingSurats as $pendingSurats)
-                    <a href="#"
+                    <a href="{{ route('permohonan-surat.show', $pendingSurats->id) }}"
                         class="block max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 
                         <h5 class="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

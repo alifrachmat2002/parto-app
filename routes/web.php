@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/permohonan-surat', [PermohonanSuratController::class, 'index'])->name('permohonan-surat.index');
     Route::get('/permohonan-surat/create', [PermohonanSuratController::class, 'create'])->name('permohonan-surat.create');
     Route::post('/permohonan-surat/store', [PermohonanSuratController::class, 'store'])->name('permohonan-surat.store');
+    Route::get('/permohonan-surat/{surat}', [PermohonanSuratController::class, 'show'])->name('permohonan-surat.show');
 });
 
 require __DIR__.'/auth.php';

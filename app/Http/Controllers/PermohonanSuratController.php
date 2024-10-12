@@ -58,4 +58,9 @@ class PermohonanSuratController extends Controller
 
         return redirect()->route('permohonan-surat.index',)->with('success', 'Surat berhasil diajukan dengan nomor surat ' . $surat->id);
     }
+
+    public function show(Surat $surat)
+    {
+        return view('permohonan-surat.show', compact('surat'));
+    }
 }
