@@ -73,7 +73,7 @@ class SuratFactory extends Factory
             'pendidikan_terakhir' => $this->faker->randomElement(['Belum Sekolah', 'SD', 'SLTP', 'SLTA', 'D1/D2', 'AK/D3/SM', 'S1/D4', 'S2', 'S3']),
             'pekerjaan' => $this->faker->jobTitle(),
             'alamat' => $alamat,
-            'nomor_identitas' => $this->faker->numerify('##############'),
+            'nomor_identitas' => $this->faker->nik(),
             'keperluan' => $keterangan,
             'nomor_hp' => $this->faker->phoneNumber(),
             'file_surat' => $this->faker->word,
