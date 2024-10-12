@@ -1,4 +1,18 @@
 <x-app-layout>
+    <x-slot name="breadcrumbs">
+        <li>
+            <div class="flex items-center">
+                <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 9 4-4-4-4" />
+                </svg>
+                <a href="#"
+                    class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Buat Permohonan Baru</a>
+            </div>
+        </li>
+    </x-slot>
+
     <section class="bg-gray-100 dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
             <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Buat Permohonan Surat Baru</h2>
@@ -22,7 +36,8 @@
                     {{-- Nomor Identitas Input --}}
                     <div class="sm:col-span-2">
                         <label for="nomor_identitas"
-                            class="block mb-2 text-sm font-medium @error('nomor_identitas') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror">Nomor Identitas
+                            class="block mb-2 text-sm font-medium @error('nomor_identitas') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror">Nomor
+                            Identitas
                             Kependudukan (NIK)</label>
                         <input type="text" name="nomor_identitas" id="nomor_identitas"
                             class="bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 @error('nomor_identitas') dark:border-red-500 border-red-600 dark:focus:border-red-500 @else border-gray-300 dark:border-gray-600 @enderror"
@@ -36,7 +51,8 @@
                     {{-- Nomoh HP Input --}}
                     <div class="sm:col-span-2">
                         <label for="phone-input"
-                            class="block mb-2 text-sm font-medium @error('nomor_hp') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror">Nomor Telepon</label>
+                            class="block mb-2 text-sm font-medium @error('nomor_hp') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror">Nomor
+                            Telepon</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none">
                                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -58,10 +74,11 @@
                         @enderror
                     </div>
 
-                    {{-- Tempat lahir input --}} 
+                    {{-- Tempat lahir input --}}
                     <div class="w-full">
                         <label for="tempat_lahir"
-                            class="block mb-2 text-sm font-medium @error('tempat_lahir') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror">Tempat Lahir</label>
+                            class="block mb-2 text-sm font-medium @error('tempat_lahir') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror">Tempat
+                            Lahir</label>
                         <input type="text" name="tempat_lahir" id="tempat_lahir"
                             class="bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 @error('tempat_lahir') dark:border-red-500 border-red-600 dark:focus:border-red-500 @else border-gray-300 dark:border-gray-600 @enderror"
                             placeholder="Ketik tempat lahir pemohon" value="{{ old('tempat_lahir') }}">
@@ -74,7 +91,8 @@
                     {{-- tanggal lahir input --}}
                     <div class="w-full">
                         <label for="datepicker-autohide"
-                            class="block mb-2 text-sm font-medium @error('tanggal_lahir') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror">Tanggal Lahir</label>
+                            class="block mb-2 text-sm font-medium @error('tanggal_lahir') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror">Tanggal
+                            Lahir</label>
                         <div class="relative max-w-sm">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -97,12 +115,13 @@
                     {{-- Jenis Kelamin Input --}}
                     <div>
                         <label for="jenis_kelamin"
-                            class="block mb-2 text-sm font-medium @error('jenis_kelamin') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror">Jenis Kelamin</label>
+                            class="block mb-2 text-sm font-medium @error('jenis_kelamin') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror">Jenis
+                            Kelamin</label>
                         <select id="jenis_kelamin" name="jenis_kelamin"
                             class="bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 @error('jenis_kelamin') dark:border-red-500 border-red-600 dark:focus:border-red-500 @else border-gray-300 dark:border-gray-600 @enderror">
                             <option selected value="">Pilih jenis kelamin </option>
-                            <option value="Laki-laki" @selected(old('jenis_kelamin') == "Laki-laki")>Laki-laki</option>
-                            <option value="Perempuan" @selected(old('jenis_kelamin') == "Perempuan")>Perempuan</option>
+                            <option value="Laki-laki" @selected(old('jenis_kelamin') == 'Laki-laki')>Laki-laki</option>
+                            <option value="Perempuan" @selected(old('jenis_kelamin') == 'Perempuan')>Perempuan</option>
                         </select>
                         @error('jenis_kelamin')
                             <p id="standard_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400"><span
@@ -115,12 +134,12 @@
                         <label for="status_perkawinan"
                             class="block mb-2 text-sm font-medium @error('status_perkawinan') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror">Status</label>
                         <select id="status_perkawinan" name="status_perkawinan"
-                            class="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 @error('status_perkawinan') dark:border-red-500 border-red-600 dark:focus:border-red-500 @else border-gray-300 dark:border-gray-600 @enderror" >
+                            class="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 @error('status_perkawinan') dark:border-red-500 border-red-600 dark:focus:border-red-500 @else border-gray-300 dark:border-gray-600 @enderror">
                             <option selected value="">Pilih status </option>
-                            <option value="Belum Kawin" @selected(old('status_perkawinan') == "Belum Kawin")>Belum Kawin</option>
-                            <option value="Kawin" @selected(old('status_perkawinan') == "Kawin")>Kawin</option>
-                            <option value="Janda" @selected(old('status_perkawinan') == "Janda")>Janda</option>
-                            <option value="Duda" @selected(old('status_perkawinan') == "Duda")>Duda</option>
+                            <option value="Belum Kawin" @selected(old('status_perkawinan') == 'Belum Kawin')>Belum Kawin</option>
+                            <option value="Kawin" @selected(old('status_perkawinan') == 'Kawin')>Kawin</option>
+                            <option value="Janda" @selected(old('status_perkawinan') == 'Janda')>Janda</option>
+                            <option value="Duda" @selected(old('status_perkawinan') == 'Duda')>Duda</option>
                         </select>
                         @error('status_perkawinan')
                             <p id="standard_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400"><span
@@ -135,11 +154,11 @@
                         <select id="agama" name="agama"
                             class="bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500  @error('agama') dark:border-red-500 border-red-600 dark:focus:border-red-500 @else border-gray-300 dark:border-gray-600 @enderror">
                             <option selected value="">Pilih agama pemohon</option>
-                            <option value="Islam" @selected(old('agama') == "Islam")>Islam</option>
-                            <option value="Protestan" @selected(old('agama') == "Protestan")>Protestan</option>
-                            <option value="Katolik" @selected(old('agama') == "Katolik")>Katolik</option>
-                            <option value="Buddha" @selected(old('agama') == "Buddha")>Buddha</option>
-                            <option value="Khonghucu" @selected(old('agama') == "Khonghucu")>Khonghucu</option>
+                            <option value="Islam" @selected(old('agama') == 'Islam')>Islam</option>
+                            <option value="Protestan" @selected(old('agama') == 'Protestan')>Protestan</option>
+                            <option value="Katolik" @selected(old('agama') == 'Katolik')>Katolik</option>
+                            <option value="Buddha" @selected(old('agama') == 'Buddha')>Buddha</option>
+                            <option value="Khonghucu" @selected(old('agama') == 'Khonghucu')>Khonghucu</option>
                         </select>
                         @error('agama')
                             <p id="standard_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400"><span
@@ -153,20 +172,21 @@
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kewarganegaraan</label>
                         <div class="flex" id="kewarganegaraan">
                             <div class="flex items-center me-4">
-                                <input id="indonesia-nationality-radio" type="radio" value="Indonesia" @checked(old('kewarganegaraan') == "Indonesia")
-                                    name="kewarganegaraan"
+                                <input id="indonesia-nationality-radio" type="radio" value="Indonesia"
+                                    @checked(old('kewarganegaraan') == 'Indonesia') name="kewarganegaraan"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                 <label for="indonesia-nationality-radio"
                                     class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Indonesia</label>
                             </div>
                             <div class="flex items-center me-4 gap-4">
-                                <input id="custom_nationality_radio" type="radio" value="Other" @checked(old('kewarganegaraan') == "Other")
-                                    name="kewarganegaraan"
+                                <input id="custom_nationality_radio" type="radio" value="Other"
+                                    @checked(old('kewarganegaraan') == 'Other') name="kewarganegaraan"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                 <label for="custom_nationality_radio" class="relative z-0">
                                     <input type="text" id="custom_nationality" name="custom_nationality"
                                         class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                        placeholder=" " @error('custom_nationality') @else disabled @enderror value="{{ old('custom_nationality') ?? '' }}"/>
+                                        placeholder=" " @error('custom_nationality') @else disabled @enderror
+                                        value="{{ old('custom_nationality') ?? '' }}" />
                                     <label for="custom_nationality"
                                         class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Lainnya</label>
                                 </label>
@@ -238,12 +258,15 @@
                             class="block mb-2 text-sm font-medium @error('keperluan') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror">Keperluan</label>
                         <select name="keperluan" id="keperluan"
                             class="bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 @error('keperluan') dark:border-red-500 border-red-600 dark:focus:border-red-500 @else border-gray-300 dark:border-gray-600 @enderror">
-                            <option selected value="" @selected(old('keperluan') == 'SD')>Pilih keperluan pemohon </option>
+                            <option selected value="" @selected(old('keperluan') == 'SD')>Pilih keperluan pemohon
+                            </option>
                             <option value="Surat domisili" @selected(old('keperluan') == 'Surat domisili')>Surat domisili</option>
                             <option value="Permohonan KTP" @selected(old('keperluan') == 'Permohonan KTP')>Permohonan KTP</option>
                             <option value="Permohonan KK" @selected(old('keperluan') == 'Permohonan KK')>Permohonan KK</option>
-                            <option value="Permohonan KTP dan KK" @selected(old('keperluan') == 'Permohonan KTP dan KK')>Permohonan KTP dan KK</option>
-                            <option value="Surat keterangan pindah" @selected(old('keperluan') == 'Surat keterangan pindah')>Surat keterangan pindah</option>
+                            <option value="Permohonan KTP dan KK" @selected(old('keperluan') == 'Permohonan KTP dan KK')>Permohonan KTP dan KK
+                            </option>
+                            <option value="Surat keterangan pindah" @selected(old('keperluan') == 'Surat keterangan pindah')>Surat keterangan
+                                pindah</option>
                             <option value="Surat keterangan" @selected(old('keperluan') == 'Surat keterangan')>Surat keterangan</option>
                             <option value="lainnya" @selected(old('keperluan') == 'lainnya')>Lainnya</option>
                         </select>
@@ -273,7 +296,7 @@
                             class="block mb-2 text-sm font-medium @error('keterangan') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror">Keterangan</label>
                         <textarea id="keterangan" name="keterangan" rows="8"
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 @error('keterangan') dark:border-red-500 border-red-600 dark:focus:border-red-500 @else border-gray-300 dark:border-gray-600 @enderror"
-                            placeholder="Jelaskan keterangan permohonan surat" >{{ old('keterangan') ?? ''}}</textarea>
+                            placeholder="Jelaskan keterangan permohonan surat">{{ old('keterangan') ?? '' }}</textarea>
                         <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">contoh :
                             permohonan KTP atas nama Lorem Ipsum</p>
                         @error('keterangan')
@@ -285,7 +308,8 @@
                     {{-- unggah dokumen input --}}
                     <div class="sm:col-span-2">
 
-                        <label class="block mb-2 text-sm font-medium @error('file_surat') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror"
+                        <label
+                            class="block mb-2 text-sm font-medium @error('file_surat') text-red-700 dark:text-red-500 @else text-gray-900 dark:text-white @enderror"
                             for="file_input">Unggah Dokumen Pendukung</label>
                         <input
                             class="block w-full text-sm text-gray-900 border rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:placeholder-gray-400 @error('file_surat') dark:border-red-500 border-red-600 dark:focus:border-red-500 @else border-gray-300 dark:border-gray-600 @enderror"
