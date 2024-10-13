@@ -19,14 +19,17 @@
             Riwayat Permohonan Surat
         </h2>
 
-        <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400" data-tabs-toggle="#suratTab" role="tablist" data-tabs-active-classes="text-white bg-blue-600">
+        <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400"
+            data-tabs-toggle="#suratTab" role="tablist" data-tabs-active-classes="text-white bg-blue-600">
             <li class="me-2" role="presentation">
-                <a href="#" class="inline-block px-3 py-2 rounded-lg active" id="" data-tabs-target="#pendingSuratTab" type="button" role="tab" aria-controls="pendingSuratTab" aria-selected="false"
-                    aria-current="page">Berjalan</a>
+                <a href="#" class="inline-block px-3 py-2 rounded-lg active" id=""
+                    data-tabs-target="#pendingSuratTab" type="button" role="tab" aria-controls="pendingSuratTab"
+                    aria-selected="false" aria-current="page">Berjalan</a>
             </li>
             <li class="me-2" role="presentation">
-                <a href="#"
-                    class="inline-block px-3 py-2 rounded-lg " id="profile-tab" data-tabs-target="#acceptedSuratTab" type="button" role="tab" aria-controls="acceptedSuratTab" aria-selected="false">Selesai</a>
+                <a href="#" class="inline-block px-3 py-2 rounded-lg " id="profile-tab"
+                    data-tabs-target="#acceptedSuratTab" type="button" role="tab" aria-controls="acceptedSuratTab"
+                    aria-selected="false">Selesai</a>
             </li>
 
         </ul>
@@ -39,19 +42,14 @@
                         <h5 class="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             {{ $acceptedSurat->perihal }}</h5>
 
-                        <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mt-0 p-0 mb-4">
+                        <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mt-0 p-0 mb-2">
                             {{ $acceptedSurat->created_at->diffForHumans() }}
                         </p>
-                        <p class="font-normal text-gray-700 dark:text-gray-400 mb-4">{{ $acceptedSurat->keperluan }}</p>
-                        <span
-                            class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                            <span class="w-2 h-2 me-1 bg-green-500 rounded-full "></span>
-                            {{ $acceptedSurat->status }}
-                        </span>
+                        <x-permohonan-status-badge :status="$acceptedSurat->status" />
+                        <p class="font-normal text-gray-700 dark:text-gray-400 mt-4">{{ $acceptedSurat->keperluan }}</p>
 
                     </a>
                 @empty
-                    
                 @endforelse
 
 
@@ -64,19 +62,14 @@
                         <h5 class="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             {{ $pendingSurats->perihal }}</h5>
 
-                        <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mt-0 p-0 mb-4">
+                        <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mt-0 p-0 mb-2">
                             {{ $pendingSurats->created_at->diffForHumans() }}
                         </p>
-                        <p class="font-normal text-gray-700 dark:text-gray-400 mb-4">{{ $pendingSurats->keperluan }}</p>
-                        <span
-                            class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                            <span class="w-2 h-2 me-1 bg-green-500 rounded-full "></span>
-                            {{ $pendingSurats->status }}
-                        </span>
+                        <x-permohonan-status-badge :status="$pendingSurats->status"/>
+                        <p class="font-normal text-gray-700 dark:text-gray-400 mt-4">{{ $pendingSurats->keperluan }}</p>
 
                     </a>
                 @empty
-                    
                 @endforelse
             </div>
         </div>
